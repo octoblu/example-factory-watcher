@@ -1,0 +1,23 @@
+{
+  "name": "example-factory-watcher",
+  "version": "1.0.0",
+  "description": "Example factory watcher using virtual devices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octoblu/example-factory-watcher.git"
+  },
+  "keywords": [
+    "meshblu",
+    "octoblu"
+  ],
+  "author": "Octoblu, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/octoblu/example-factory-watcher/issues"
+  },
+  "homepage": "https://github.com/octoblu/example-factory-watcher#readme"
+}

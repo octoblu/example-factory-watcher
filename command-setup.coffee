@@ -28,6 +28,10 @@ class CommandSetup
       ownerUuid: opts.ownerUuid
     }
 
+  panic: (error) =>
+    console.error error.stack
+    process.exit 1
+
   run: =>
     {numberOfSensors, ownerUuid} = @getOpts()
 

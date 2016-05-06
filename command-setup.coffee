@@ -19,7 +19,7 @@ class CommandSetup
       .opts()
 
     if _.isEmpty opts.ownerUuid
-      commander.outputHelp()
+      console.error commander.helpInformation()
       console.error colors.red '\n  -o, --owner-uuid is required\n'
       process.exit 1
 

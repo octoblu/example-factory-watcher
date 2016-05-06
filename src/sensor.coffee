@@ -26,7 +26,6 @@ class Sensor extends EventEmitter
     @meshblu.on 'message', @_onMessage
 
   _emitTemperature: =>
-    console.log {uuid: @device.uuid, name: @device.name}
     temperature = _.random 50, 80
 
     @emit 'temperature', temperature

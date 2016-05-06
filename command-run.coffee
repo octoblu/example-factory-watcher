@@ -6,7 +6,7 @@ _            = require 'lodash'
 PACKAGE_JSON = require './package.json'
 Sensor       = require './src/sensor'
 
-class CommandSetup
+class CommandRun
   constructor: (@argv) ->
 
   getOpts: =>
@@ -53,4 +53,4 @@ class CommandSetup
   _startSensors: ({sensors}, callback) =>
     async.each sensors, @_startSensor, callback
 
-module.exports = CommandSetup
+module.exports = CommandRun

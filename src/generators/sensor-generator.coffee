@@ -9,7 +9,7 @@ module.exports = ({i, virtualDevice}) =>
       version: '2.0.0'
       whitelists:
         broadcast:
-          receive: [{
+          sent: [{
             uuid: virtualDevice.uuid
           }]
         message:

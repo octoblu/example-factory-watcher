@@ -5,6 +5,7 @@ module.exports = ({ownerUuid}) =>
     owner: ownerUuid
     type: 'device:generic'
     name: 'Virtual Device'
+    online: true
     meshblu:
       version: '2.0.0'
       forwarders:

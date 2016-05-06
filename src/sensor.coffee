@@ -1,6 +1,7 @@
 {EventEmitter} = require 'events'
 _              = require 'lodash'
 meshblu        = require 'meshblu'
+MeshbluHttp    = require 'meshblu-http'
 
 class Sensor extends EventEmitter
   constructor: ({@uuid,@token}) ->
@@ -25,15 +26,21 @@ class Sensor extends EventEmitter
     @meshblu.on 'message', @_onMessage
 
   _emitTemperature: =>
+    console.log {uuid: @device.uuid, name: @device.name}
     temperature = _.random 50, 80
 
     @emit 'temperature', temperature
-
-    @meshblu.message {
+    message = {
       devices: ['*']
       payload:
         temperature: temperature
     }
+
+    meshblu = new MeshbluHttp {@uuid, @token}
+    meshblu.message message, (error) =>
+      @emit 'error', error if error?
+    # @meshblu.message message, (error) =>
+    #   @emit 'error', error if error?
 
   _onMessage: (message) =>
     return unless message.payload?.command == 'stop'
